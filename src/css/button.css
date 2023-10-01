@@ -1,0 +1,136 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,*:before,*:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+nav,footer,header,aside{display: block;}
+input,button,textarea{font-family:inherit;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #000;
+    font-weight: 500;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #000;
+    font-weight: 500;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #000;
+    font-weight: 500;
+}
+
+/* caveat-regular - cyrillic_cyrillic-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/caveat-v18-cyrillic_cyrillic-ext-regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/caveat-v18-cyrillic_cyrillic-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/caveat-v18-cyrillic_cyrillic-ext-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/caveat-v18-cyrillic_cyrillic-ext-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('../fonts/caveat-v18-cyrillic_cyrillic-ext-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Caveat', sans-serif;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 15px 0;
+  margin: 150px auto 20px;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  font-size: inherit;
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  padding: 0.5rem 1rem;
+  margin: 0 0 0 30px;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+
+.button:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.popover{
+  position: absolute;
+  max-width: 250px;
+  transform: translate(-50%, -100%);
+  background: #fff;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0.3rem;
+  margin: 0 0 0.5rem;
+  z-index: 999;
+}
+
+.popover__arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  height: 0.5rem;
+  width: 1rem;
+  transform: translateX(-50%);
+}
+
+.popover__arrow::after, .popover__arrow::before {
+  position: absolute;
+  display: block;
+  content: "";
+  border-color: transparent;
+  border-style: solid;
+}
+
+.popover__arrow::before{
+  border-width: 0.5rem 0.5rem 0 0.5rem;
+  border-top-color: rgba(0,0,0,.2);
+}
+
+.popover__arrow::after {
+  bottom: 1px;
+  border-width: 0.5rem 0.5rem 0 0.5rem;
+  border-top-color: #fff;
+}
+
+.popover__header{
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+.popover__content{
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  color: #212529;
+}
